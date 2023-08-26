@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { toast } from "react-toastify";
-import { Usenavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Navbar from '../../Components/Navbar/navbar';
 import noAvatar from '../../assets/noavatar.png';
 import './home.css';
@@ -30,8 +30,8 @@ function App() {
     setSearchResults(filteredUsers);
   }, [searchQuery, users]);
 
-  const handleDetails = () => {
-    navigate('/editUser');
+  const handleDetails = (userId) => {
+    navigate(`/editUser/${userId}`);
   }
 
   const handleDelete = (userId) => {
@@ -76,7 +76,7 @@ function App() {
                 <p>Email: {user.email}</p>
                 <p>Phone: {user.phone}</p>
                 <p>Website: {user.website}</p>
-                <button className='edit-btn' onClick={handleDetails}>Edit info</button>
+                <button className='edit-btn' onClick={() => handleDetails(user.id)}>Edit info</button>
                 <button className='delete-btn' onClick={() => handleDelete(user.id)}>Delete</button>
               </div>
             ))}
