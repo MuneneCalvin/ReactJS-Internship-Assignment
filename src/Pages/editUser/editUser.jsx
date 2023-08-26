@@ -27,29 +27,20 @@ function addUser() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            fetch(`https://jsonplaceholder.typicode.com/users/${userId}`, {
-                method: 'PUT',
-                headers: {
-                    'Content-type': 'application/json',
-                },
-                body: JSON.stringify(userData),
-            })
-            .then((response) => response.json())
-            .then((json) => {
-                console.log(json);
-                toast.success('Updated Successfully..!!!!', {
-                    position: "top-right",
-                    autoClose: 3000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "dark",
-                    });
-            });
+            const response = await axios.put(`https://jsonplaceholder.typicode.com/users/${userId}`, userData);
+            console.log('New User added:', response.data);
+            toast.success('🦄 Wow so easy!', {
+                position: "top-right",
+                autoClose: 13,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                });
         } catch (error) {
-            console.log(error);
+            console.log('Error:', error);
         }
     };
 
@@ -67,12 +58,13 @@ function addUser() {
         {/* Navbar */}
         <Navbar />
 
-        {/* Edit User */}
+        {/* Update User */}
         <section id="addUser" class="addUser">
             <div class="add-container">
                 <div class="section-title">
-                    <h2>Edit User Details</h2>
+                    <h2>Update User Details</h2>
                 </div>
+
                 <form onSubmit={handleSubmit}>
                     <input type="text" name="name" placeholder="Name" value={userData.name} onChange={handleInputChange} />
                     <input type="text" name="username" placeholder="Username" value={userData.username} onChange={handleInputChange} />
@@ -84,11 +76,11 @@ function addUser() {
                     <input type="text" name="companyName" placeholder="Company Name" value={userData.company.name} onChange={handleInputChange} />
                     <input type="text" name="catchPhrase" placeholder="Catch Phrase" value={userData.company.catchPhrase} onChange={handleInputChange} />
                     <input type="text" name="bs" placeholder="BS" value={userData.company.bs} onChange={handleInputChange} />
-                </form>
 
-                <div className="button">
-                <button type="submit" class="add-btn">Update</button>
-                </div>
+                    <div className="button">
+                        <button type="submit" class="add-btn">Update</button>
+                    </div>
+                </form>
             </div>
         </section>
         </>
