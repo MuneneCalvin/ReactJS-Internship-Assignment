@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { toast } from "react-toastify";
+import { Usenavigate } from 'react-router-dom';
 import Navbar from '../../Components/Navbar/navbar';
 import noAvatar from '../../assets/noavatar.png';
 import './home.css';
 
 function App() {
+  const navigate = useNavigate();
   const [users, setUsers] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
@@ -28,17 +30,8 @@ function App() {
     setSearchResults(filteredUsers);
   }, [searchQuery, users]);
 
-  const handleMoreDetails = () => {
-    toast.warn('🦄 Wow so easy!', {
-      position: "top-right",
-      autoClose: 13,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-      });
+  const handleDetails = () => {
+    navigate('/editUser');
   }
 
   const handleDelete = (userId) => {
@@ -83,7 +76,7 @@ function App() {
                 <p>Email: {user.email}</p>
                 <p>Phone: {user.phone}</p>
                 <p>Website: {user.website}</p>
-                <button className='more-btn' onClick={handleMoreDetails}>View More</button>
+                <button className='edit-btn' onClick={handleDetails}>Edit info</button>
                 <button className='delete-btn' onClick={() => handleDelete(user.id)}>Delete</button>
               </div>
             ))}
