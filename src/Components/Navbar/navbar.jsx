@@ -8,7 +8,7 @@ function navbar() {
         <header id="header" class="header">
             <div class="container">
                 <nav class="nav">
-                    <a href="index.html" class="nav__brand">
+                    <a href="/" class="nav__brand">
                         <i class="ri-code-s-slash-line"></i>DevelopedByCal
                     </a>
                     <div class="nav__menu" id="nav-menu">
