@@ -19,12 +19,52 @@ body{
     color: #fff;
 }
 
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    margin-top: 130px;
+}
+.search-bar input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 250px;
+}
+.search-bar button {
+    background-color: var(--green);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: var(--trans);
+}
+.search-bar button:hover {
+    background-color: #0f9d8b;
+}
+.add-user-btn {
+    background-color: var(--green);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: var(--trans);
+}
+.add-user-btn:hover {
+    background-color: #0f9d8b;
+}
 .card-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    margin-top: 20px;
+    margin-top: 50px;
 }
 .card {
     height: 0.5%;
