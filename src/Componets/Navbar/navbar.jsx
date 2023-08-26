@@ -1,4 +1,5 @@
 import React from 'react';
+import addUser from '../../Pages/addUser/addUser';
 import './navbar.css'
 
 function navbar() {
@@ -16,7 +17,7 @@ function navbar() {
                                 <a href="#hero" class="nav__link">Home</a>
                             </li>
                             <li class="nav__item">
-                                <a href="#contact"  class="nav__link">Contact</a>
+                                <a href=""  class="nav__link">Add New User</a>
                             </li>
                         </ul>
                     </div>
