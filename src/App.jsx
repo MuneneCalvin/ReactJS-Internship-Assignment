@@ -9,6 +9,7 @@ function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
 
+
   useEffect(() => {
     axios.get('https://jsonplaceholder.typicode.com/users')
       .then(response => {
@@ -37,19 +38,15 @@ function App() {
         <Navbar />
 
         <div className="top-bar">
-        <div className="search-bar">
-          <input
-            type="text"
-            placeholder="Search for users..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
-          <button className='search-btn'>Search</button>
-        </div>
-
-        <div className="add-user">
-          <button className='add-user-btn'>Add User</button>
-        </div>
+          <div className="search-bar">
+            <input
+              type="text"
+              placeholder="Search for users..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+            <button className='search-btn'>Search</button>
+          </div>
         </div>
 
         <div className="user-card">
