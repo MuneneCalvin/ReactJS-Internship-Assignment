@@ -1,5 +1,5 @@
 import React from 'react';
-import addUser from '../../Pages/addUser/addUser';
+import { Link } from 'react-router-dom';
 import './navbar.css'
 
 function navbar() {
@@ -14,10 +14,10 @@ function navbar() {
                     <div class="nav__menu" id="nav-menu">
                         <ul class="nav__list">
                             <li class="nav__item">
-                                <a href="#hero" class="nav__link">Home</a>
+                                <Link to='/' className='nav__link'>Home</Link>
                             </li>
                             <li class="nav__item">
-                                <a href=""  class="nav__link">Add New User</a>
+                                <Link to='/addUser' className='nav__link'>Add New User</Link>
                             </li>
                         </ul>
                     </div>
