@@ -1,8 +1,9 @@
 import {useState} from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import Navbar from '../../Components/Navbar/navbar';
+import noAvatar from '../../assets/noavatar.png'
 import './editUser.css';
 
 function addUser() {
@@ -23,24 +24,54 @@ function addUser() {
             bs: '',
         },
     });
+    const [searchResults, setSearchResults] = useState([]);
+
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+    //     try {
+    //         const response = await axios.put(`https://jsonplaceholder.typicode.com/users/${userId}`, userData);
+    //         console.log('New User added:', response.data);
+    //         toast.success('🦄 Wow so easy!', {
+    //             position: "top-right",
+    //             autoClose: 13,
+    //             hideProgressBar: false,
+    //             closeOnClick: true,
+    //             pauseOnHover: true,
+    //             draggable: true,
+    //             progress: undefined,
+    //             theme: "dark",
+    //             });
+    //     } catch (error) {
+    //         console.log('Error:', error);
+    //     }
+    // };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.put(`https://jsonplaceholder.typicode.com/users/${userId}`, userData);
-            console.log('New User added:', response.data);
-            toast.success('🦄 Wow so easy!', {
-                position: "top-right",
-                autoClose: 13,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "dark",
-                });
+            fetch(`https://jsonplaceholder.typicode.com/users/${userId}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-type': 'application/json',
+                },
+                body: JSON.stringify(userData),
+            })
+            .then((response) => response.json())
+            .then((json) => {
+                console.log(json);
+                toast.success('Updated Successfully..!!!!', {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                    });
+            });
         } catch (error) {
-            console.log('Error:', error);
+            console.log(error);
         }
     };
 
@@ -64,6 +95,17 @@ function addUser() {
                 <div class="section-title">
                     <h2>Update User Details</h2>
                 </div>
+
+            {searchResults.map(user => (
+                <div key={user.id} className="card">
+                    <img src={noAvatar} alt="noAvatar" />
+                    <h2>{user.name}</h2>
+                    <p>Username: {user.username}</p>
+                    <p>Email: {user.email}</p>
+                    <p>Phone: {user.phone}</p>
+                    <p>Website: {user.website}</p>
+                </div>
+            ))}
 
                 <form onSubmit={handleSubmit}>
                     <input type="text" name="name" placeholder="Name" value={userData.name} onChange={handleInputChange} />
