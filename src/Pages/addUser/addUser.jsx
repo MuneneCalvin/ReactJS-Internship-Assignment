@@ -80,9 +80,9 @@ function addUser() {
         <Navbar />
 
         {/* Add User */}
-        <section id="addUser" class="addUser">
-            <div class="add-container">
-                <div class="section-title">
+        <section id="addUser" className="addUser">
+            <div className="add-container">
+                <div className="section-title">
                     <h2>Add New User</h2>
                 </div>
                 <form onSubmit={handleSubmit}>
@@ -98,7 +98,7 @@ function addUser() {
                     <input type="text" name="company.bs" placeholder="BS" value={userData.company.bs} onChange={handleInputChange} />
 
                     <div className="button">
-                        <button type="submit" class="add-btn">Add User</button>
+                        <button type="submit" className="add-btn">Add User</button>
                     </div>
                 </form>
             </div>

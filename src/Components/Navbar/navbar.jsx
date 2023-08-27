@@ -5,24 +5,24 @@ import './navbar.css'
 function navbar() {
     return (
 
-        <header id="header" class="header">
+        <header id="header" className="header">
             <div class="container">
                 <nav class="nav">
-                    <a href="/" class="nav__brand">
-                        <i class="ri-code-s-slash-line"></i>DevelopedByCal
+                    <a href="/" className="nav__brand">
+                        <i className="ri-code-s-slash-line"></i>DevelopedByCal
                     </a>
-                    <div class="nav__menu" id="nav-menu">
-                        <ul class="nav__list">
-                            <li class="nav__item">
+                    <div className="nav__menu" id="nav-menu">
+                        <ul className="nav__list">
+                            <li className="nav__item">
                                 <Link to='/' className='nav__link'>Home</Link>
                             </li>
-                            <li class="nav__item">
+                            <li className="nav__item">
                                 <Link to='/addUser' className='nav__link'>Add New User</Link>
                             </li>
                         </ul>
                     </div>
-                    <div class="nav__toggle">
-                        <i id="nav-toggle" class="ri-menu-3-line"></i>
+                    <div className="nav__toggle">
+                        <i id="nav-toggle" className="ri-menu-3-line"></i>
                     </div>
                 </nav>
             </div>
