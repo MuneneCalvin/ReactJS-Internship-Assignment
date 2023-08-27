@@ -3,6 +3,7 @@ import axios from 'axios';
 import { toast } from "react-toastify";
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../../Components/Navbar/navbar';
+import Footer from '../../Components/Footer/footer';
 import noAvatar from '../../assets/noavatar.png';
 import './home.css';
 
@@ -83,6 +84,7 @@ function App() {
           </div>
         </div>
 
+        <Footer />
       </main>
     </>
   )

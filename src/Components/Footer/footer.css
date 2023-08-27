@@ -1,41 +1,15 @@
-:root {
-    /* Colors*/
-    --color-primary: #25ab75;
-    --color-primary-dark: #208c61;
-    --color-bg-primary: #1a1a1a;
-    --color-bg-secondary: #242424;
-    --color-bg-footer: #151515;
-    --color-white: #ffffff;
-    --color-text: #676767;
-    --color-border: #373737;
-
-    /* Font & Typography*/
-    --ff-body: "Space Grotesk", sans-serif;
-
-    /* font sizes */
-    --fs-sm: 1.4rem;
-    --fs-md: 1.6rem;
-    --fs-lg: 2rem;
-    --fs-xl: 2.4rem;
-    --fs-xxl: 3.2rem;
-    --fs-biggest: clamp(3rem, 8vw, 5rem);
-
-    /* font weight */
-    --fw-regular: 400;
-    --fw-medium: 500;
-    --fw-semibold: 600;
-    --fw-bold: 700;
-}
-
 .footer {
-    background-color: var(--color-bg-footer);
-    padding: 1rem 0;
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    margin-top: 2rem;
+    background-color: #151515;
 }
 
 .footer__copyright {
-    font: var(--ff-body);
-    font-size: var(--fs-sm);
+    font-family: cursive;
+    font-size: 1.4rem;
     text-align: center;
-    padding-top: 3rem;
-    color: var(--color-text);
+    padding-top: 2.5rem;
+    color: #676767;
 }
