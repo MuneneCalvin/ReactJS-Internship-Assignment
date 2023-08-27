@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Navbar from '../../Components/Navbar/navbar';
 import './addUser.css';
 
@@ -27,18 +28,28 @@ function addUser() {
         try {
             const response = await axios.post('https://jsonplaceholder.typicode.com/users', userData);
             console.log('New User added:', response.data);
-            toast.success('🦄 Wow so easy!', {
+            toast.success("New user added successfully.!!!", {
+                        position: "top-right",
+                        autoClose: 3000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "dark",
+                    });
+        } catch (error) {
+            console.log('Error:', error);
+            toast.error("😢 An error occurred while adding a new user...!!!", {
                 position: "top-right",
-                autoClose: 13,
+                autoClose: 3000,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
                 theme: "dark",
-                });
-        } catch (error) {
-            console.log('Error:', error);
+            });
         }
     };
 
@@ -78,6 +89,9 @@ function addUser() {
         <>
         {/* Navbar */}
         <Navbar />
+
+        {/*  */}
+        <ToastContainer />
 
         {/* Add User */}
         <section id="addUser" className="addUser">

@@ -1,9 +1,9 @@
 import {useState} from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Navbar from '../../Components/Navbar/navbar';
-import noAvatar from '../../assets/noavatar.png'
 import './editUser.css';
 
 function addUser() {
@@ -24,27 +24,6 @@ function addUser() {
             bs: '',
         },
     });
-    const [searchResults, setSearchResults] = useState([]);
-
-    // const handleSubmit = async (e) => {
-    //     e.preventDefault();
-    //     try {
-    //         const response = await axios.put(`https://jsonplaceholder.typicode.com/users/${userId}`, userData);
-    //         console.log('New User added:', response.data);
-    //         toast.success('🦄 Wow so easy!', {
-    //             position: "top-right",
-    //             autoClose: 13,
-    //             hideProgressBar: false,
-    //             closeOnClick: true,
-    //             pauseOnHover: true,
-    //             draggable: true,
-    //             progress: undefined,
-    //             theme: "dark",
-    //             });
-    //     } catch (error) {
-    //         console.log('Error:', error);
-    //     }
-    // };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -110,6 +89,9 @@ function addUser() {
         <>
         {/* Navbar */}
         <Navbar />
+
+        {/* Toast Container */}
+        <ToastContainer />
 
         {/* Update User */}
         <section id="addUser" class="addUser">

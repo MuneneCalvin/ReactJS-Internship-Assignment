@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../../Components/Navbar/navbar';
 import Footer from '../../Components/Footer/footer';
@@ -38,7 +39,7 @@ function App() {
   const handleDelete = (userId) => {
     const updatedUsers = users.filter(user => user.id !== userId);
     setUsers(updatedUsers);
-    toast.success('Deleted Successfully..!!!!', {
+    toast.success(' User Deleted Successfully..!!!!', {
       position: "top-right",
       autoClose: 3000,
       hideProgressBar: false,
@@ -53,8 +54,13 @@ function App() {
   return (
     <>
       <main>
+        {/* Navbar */}
         <Navbar />
 
+        {/* Toast Container */}
+        <ToastContainer />
+
+        {/* Search Bar */}
         <div className="top-bar">
           <div className="search-bar">
             <input
@@ -67,6 +73,7 @@ function App() {
           </div>
         </div>
 
+        {/* User Cards */}
         <div className="user-card">
           <div className="card-container">
             {searchResults.map(user => (
@@ -83,7 +90,8 @@ function App() {
             ))}
           </div>
         </div>
-
+        
+        {/* Footer */}
         <Footer />
       </main>
     </>
