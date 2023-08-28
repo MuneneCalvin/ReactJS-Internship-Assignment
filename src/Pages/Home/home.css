@@ -152,7 +152,6 @@
     padding: 15px;
     width: 300px;
     background: #2c3a3f;
-    /* background: rgba(0, 0, 0, 0.5); */
     transition: .4s ease-in-out;
 }
 .card:hover {
