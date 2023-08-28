@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -7,6 +7,7 @@ import Navbar from '../../Components/Navbar/navbar';
 import './editUser.css';
 
 function addUser() {
+    const navigate = useNavigate();
     const { userId } = useParams();
     const [userData, setUserData] = useState({
         name: '',
@@ -52,6 +53,7 @@ function addUser() {
         } catch (error) {
             console.log(error);
         }
+        navigate('/');
     };
 
     const handleInputChange = (e) => {
