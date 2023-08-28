@@ -1,0 +1,15 @@
+.footer {
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    margin-top: 2rem;
+    background-color: #151515;
+}
+
+.footer__copyright {
+    font-family: cursive;
+    font-size: 1.4rem;
+    text-align: center;
+    padding-top: 2.5rem;
+    color: #676767;
+}
