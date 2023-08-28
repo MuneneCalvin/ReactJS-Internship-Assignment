@@ -112,9 +112,9 @@ function addUser() {
                     <input type="text" name="company.catchPhrase" placeholder="Catch Phrase" value={userData.company.catchPhrase} onChange={handleInputChange} />
                     <input type="text" name="company.bs" placeholder="BS" value={userData.company.bs} onChange={handleInputChange} />
 
-                    <div className="button">
-                        <button type="submit" class="add-btn">Update User</button>
-                    </div>
+                    <button type='submit' className='edit-button'>
+                        <span>Update User</span>
+                    </button>
                 </form>
             </div>
         </section>
