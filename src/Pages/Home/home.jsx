@@ -86,7 +86,7 @@ function App() {
               <div key={user.id} className="card">
                 <div className="card-info">
                   <img src={noAvatar} alt="noAvatar" />
-                  <h2>{user.name}</h2>
+                  <h3>{user.name}</h3>
                   <p>Username: {user.username}</p>
                   <p>Email: {user.email}</p>
                   <p>Phone: {user.phone}</p>

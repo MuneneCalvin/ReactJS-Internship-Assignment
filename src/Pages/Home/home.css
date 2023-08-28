@@ -175,7 +175,6 @@ h2 {
     box-shadow: 5px 5px 0px #1FA2FF;
     transition-duration: .3s;
 }
-
 .svg {
     width: 13px;
     position: absolute;
@@ -184,11 +183,9 @@ h2 {
     fill: white;
     transition-duration: .3s;
 }
-
 .Btn:hover {
-  color: transparent;
+    color: transparent;
 }
-
 .Btn:hover svg {
     right: 43%;
     margin: 0;
@@ -196,7 +193,6 @@ h2 {
     border: none;
     transition-duration: .3s;
 }
-
 .Btn:active {
     transform: translate(3px , 3px);
     transition-duration: .3s;
