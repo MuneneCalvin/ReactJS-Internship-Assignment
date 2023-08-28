@@ -13,6 +13,13 @@
     margin: 20px 0;
     margin-top: 130px;
 }
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
 .search-bar input {
     padding: 10px;
     border: none;
@@ -31,18 +38,6 @@
     transition: var(--trans);
 }
 .search-bar button:hover {
-    background-color: #0f9d8b;
-}
-.add-user-btn {
-    background-color: var(--green);
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: var(--trans);
-}
-.add-user-btn:hover {
     background-color: #0f9d8b;
 }
 .card-container {
@@ -65,7 +60,88 @@ h2 {
     margin-top: 0;
 }
 .card img {
-    width: 80%;
-    height: 80%;
+    width: 70%;
+    height: 70%;
     border-radius: 50%;
+}
+.card-btns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* del button */
+.del-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(20, 20, 20);
+    border: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+    cursor: pointer;
+    transition-duration: .3s;
+    overflow: hidden;
+    position: relative;
+}
+.svgIcon {
+    width: 12px;
+    transition-duration: .3s;
+}
+.svgIcon path {
+    fill: white;
+}
+.del-button:hover {
+    width: 140px;
+    border-radius: 50px;
+    transition-duration: .3s;
+    background-color: rgb(255, 69, 69);
+    align-items: center;
+}
+.del-button:hover .svgIcon {
+    width: 50px;
+    transition-duration: .3s;
+    transform: translateY(60%);
+}
+.del-button::before {
+    position: absolute;
+    top: -20px;
+    content: "Delete";
+    color: white;
+    transition-duration: .3s;
+    font-size: 2px;
+}
+.del-button:hover::before {
+    font-size: 13px;
+    opacity: 1;
+    transform: translateY(30px);
+    transition-duration: .3s;
+}
+
+
+/* Update Btn */
+.button {
+    --bg: #000;
+    --hover-bg: #ff90e8;
+    --hover-text: #000;
+    color: #fff;
+    border: 1px solid var(--bg);
+    border-radius: 4px;
+    padding: 0.8em 2em;
+    background: var(--bg);
+    transition: 0.2s;
+}
+.button:hover {
+    color: var(--hover-text);
+    transform: translate(-0.25rem,-0.25rem);
+    background: var(--hover-bg);
+    box-shadow: 0.25rem 0.25rem var(--bg);
+}
+.button:active {
+    transform: translate(0);
+    box-shadow: none;
 }
