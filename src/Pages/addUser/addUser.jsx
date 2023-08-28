@@ -1,11 +1,13 @@
 import {useState} from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Navbar from '../../Components/Navbar/navbar';
 import './addUser.css';
 
 function addUser() {
+    const navigate = useNavigate();
     const [userData, setUserData] = useState({
         name: '',
         username: '',
@@ -51,6 +53,7 @@ function addUser() {
                 theme: "dark",
             });
         }
+        navigate('/');
     };
 
     const handleInputChange = (e) => {
