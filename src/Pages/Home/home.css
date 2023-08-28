@@ -158,23 +158,47 @@ h2 {
 
 
 /* Update Btn */
-.button {
-    color: #fff;
-    border: 1px solid var(--bgs);
-    border-radius: 6px;
-    height: 50px;
-    padding: 0.5em 2em;
-    background: var(--bgs);
-    transition: 0.2s;
+.Btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100px;
+    height: 40px;
+    border: none;
+    padding: 0px 20px;
+    background-color: #1FA2FF;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 5px 5px 0px #1FA2FF;
+    transition-duration: .3s;
 }
-.button:hover {
-    color: var(--hover-text);
-    transform: translate(-0.25rem,-0.25rem);
-    background: var(--green);
-    border: 1px solid var(--green);
-    box-shadow: 0.25rem 0.25rem var(--bg);
+
+.svg {
+    width: 13px;
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+    fill: white;
+    transition-duration: .3s;
 }
-.button:active {
-    transform: translate(0);
-    box-shadow: none;
+
+.Btn:hover {
+  color: transparent;
+}
+
+.Btn:hover svg {
+    right: 43%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    transition-duration: .3s;
+}
+
+.Btn:active {
+    transform: translate(3px , 3px);
+    transition-duration: .3s;
+    box-shadow: 2px 2px 0px #1FA2FF;
 }
