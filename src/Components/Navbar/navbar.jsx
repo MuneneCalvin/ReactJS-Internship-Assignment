@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { CiMenuFries } from 'react-icons/ci';
+import { BsCodeSlash } from 'react-icons/bs';
 import './navbar.css'
 
 function navbar() {
@@ -9,7 +11,7 @@ function navbar() {
             <div class="container">
                 <nav class="nav">
                     <a href="/" className="nav__brand">
-                        <i className="ri-code-s-slash-line"></i>DevelopedByCal
+                        <BsCodeSlash className="codeslash-line"/>DevelopedByCal
                     </a>
                     <div className="nav__menu" id="nav-menu">
                         <ul className="nav__list">
@@ -22,7 +24,7 @@ function navbar() {
                         </ul>
                     </div>
                     <div className="nav__toggle">
-                        <i id="nav-toggle" className="ri-menu-3-line"></i>
+                        < CiMenuFries id="nav-toggle" className="ri-menu-3-line"  />
                     </div>
                 </nav>
             </div>
